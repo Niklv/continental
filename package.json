@@ -1,0 +1,13 @@
+{
+  "name": "continental",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Niklv/continental.git"
+  },
+  "author": "Nikita Lvov <niklvov@gmail.com>",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

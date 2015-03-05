@@ -1,0 +1,17 @@
+{
+  "name": "continental",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Niklv/continental",
+  "authors": [
+    "Nikita Lvov <niklvov@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "jquery": "*.*.*",
+    "lesshat": "3.*.*",
+    "jquery-parallax": "~1.1.3"
+  }
+}
