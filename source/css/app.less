@@ -1,1 +1,69 @@
-div{}
+@import '../bower/lesshat/build/lesshat';
+@import (inline, css) '../bower/normalize-css/normalize.css';
+@import (inline, css) '../font/fonts.css';
+@import (inline, css) '../bower/slicknav/slicknav.css';
+
+@white: #FFFFFF;
+@orange: #FFAD13;
+@light_orange: #FF9C00;
+@black: #020202;
+@transparent_black: rgba(0, 0, 0, .75);
+
+@header_height: 88px;
+@header_whitespace: 19px;
+@logo_width: 97px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: @transparent_black;
+  border-top: white @header_whitespace solid;
+  height: @header_height - @header_whitespace;
+  .logo {
+    float: left;
+    /*height: @header_height;
+    width: @logo_width;
+    background: url('img/logo.png');*/
+  }
+  ul#menu {
+    float: right;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style: none;
+    li {
+      float: left;
+      height: 100%;
+      a {
+        margin: 0 20px;
+        color: @white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.slicknav_menu {
+  display: none;
+  .logo {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  #menu {
+    display: none;
+  }
+
+  .slicknav_menu {
+    display: block;
+  }
+}

@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Helios Italic';
+  src: url('he_____o.eot'); /* IE9 Compat Modes */
+  src: url('he_____o.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('he_____o.woff') format('woff'), /* Modern Browsers */
+       url('he_____o.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('he_____o.svg#3a32e00261e4f1d419e8eeb1489dbd2f') format('svg'); /* Legacy iOS */
+
+  font-style:   italic;
+  font-weight:  400;
+}
+
+
+@font-face {
+  font-family: 'HeliosCond Light';
+  src: url('he_cl___.eot'); /* IE9 Compat Modes */
+  src: url('he_cl___.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('he_cl___.woff') format('woff'), /* Modern Browsers */
+       url('he_cl___.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('he_cl___.svg#dd4b49fca99e2c32bccd9fff6b758fc8') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  200;
+}
+
+
+@font-face {
+  font-family: 'HeliosCond Bold';
+  src: url('he_cn__b.eot'); /* IE9 Compat Modes */
+  src: url('he_cn__b.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('he_cn__b.woff') format('woff'), /* Modern Browsers */
+       url('he_cn__b.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('he_cn__b.svg#59448e62fbd5fb1f0f8e020966d80985') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  700;
+}

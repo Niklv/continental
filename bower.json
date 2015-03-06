@@ -12,6 +12,8 @@
   "dependencies": {
     "jquery": "*.*.*",
     "lesshat": "3.*.*",
-    "jquery-parallax": "~1.1.3"
+    "jquery-parallax": "~1.1.3",
+    "slicknav": "~1.0.1",
+    "normalize-css": "~3.0.2"
   }
 }
