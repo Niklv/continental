@@ -4,14 +4,19 @@ $(function () {
         prependTo: '.page-wrapper',
         closeOnClick: true
     });
-    $('.slicknav_menu').prepend('<div class="logo"><a href="#"><img src="img/logo.png"/></a></div>');
-});
+    $('.slicknav_menu').prepend('<div class="logo"><a href="#main"><img src="img/logo.png"/></a></div>');
 
-navigator.geolocation.getCurrentPosition(
-    function(position) {
-        console.log(position);
-    }
-);
+
+
+    $('ul#menu a, .logo a, .slicknav_nav a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+    });
+
+    skrollr.init();
+});
 
 ymaps.ready(function () {
 
@@ -20,7 +25,6 @@ ymaps.ready(function () {
         zoom: 13,
         controls: []
     });
-
 
     var geolocation = ymaps.geolocation
     myMap.behaviors.disable('scrollZoom');

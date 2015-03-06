@@ -18,16 +18,38 @@ html(lang="en")
                     li: a(href="#service_centers")= 'Сервисные центры'
                     li: a(href="rules.html")= 'Правила'
                     li: a(href="#contacts")= 'Контакты'
-            #main.parallax.screen.screen-1.promo
+            #main.parallax.screen.screen-1.promo()
                 img(src="img/road_sign.png").sign.parallax-element
                 img(src="img/men_and_tire.png").tireman.parallax-element
-            #rules.parallax.screen.screen-2.rules
+            //#slogan.parallax.screen.screen-2.slogan
+                H1 Безопастность - наш приоритет
+                H1 Хранение - на подарок
+                ol
+                    li При покупке комплекта шин
+                        span.orange Continental
+                        | 17 диаметра и выше
+                        img(src="img/wheel.png")
+                    li Сезонное хранение в подарок
+                        span.orange *
+                        img(src="img/wheel.png")
+                .note
+                    | Срок проведения акции: с 15 марта по 17 мая 2015г. Количество подарков ограничено.
+                    br
+                    | Детали акции, полный список моделей шин, участвующих в акции,
+                    | и дополнительную информацию можно найти на сайте:&nbsp;
+                    a.orange(href="http://www.contipromo.ru" target="_blank") www.contipromo.ru
+                a(href="#map") Где купить?
             #service_centers.parallax.screen.screen-3.map-selector
+                .row-wrapper
+                    .cell-wrapper
+                        .white-line
+
+
             #map.parallax.screen.screen-4.map
-            footer#contacts
-                .phone Телефон горячей линии
-                    span.orange +7(985)750-02-50
-                    | - работает с 10 до 19.
-                .mail mail@contipromo.ru
+            footer.parallax.screen#contacts
+                .phone-str Телефон горячей линии&nbsp;
+                    span.orange.phone +7(985)750-02-50
+                    | &nbsp;- работает с 10 до 19.
+                .mail: a(href="mailto:mail@contipromo.ru") mail@contipromo.ru
                 .copyright © Continental AG 2015
         script(src="js/app.js")

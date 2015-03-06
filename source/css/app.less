@@ -31,6 +31,10 @@ html, body {
   font-size: 20px;
 }
 
+.orange {
+  color: @orange;
+}
+
 .page-wrapper {
   position: relative;
   margin: 0  @body_border;
@@ -101,27 +105,71 @@ header {
 .parallax.screen {
   width: 100%;
   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   .background-size(cover);
-  background-position: center center;
+  background-attachment: fixed;
   border-bottom: 4px @orange solid;
-  &.promo {
+  overflow: hidden;
+  &#main {
     background-image: url('../img/bg_road.png');
+  }
+  &#service_centers{
+    background-image: url('../img/bg_tire.png');
+    display: table;
+    .row-wrapper {
+      display: table-row;
+      width:100%;
+      height:100%;
+      .cell-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        .white-line {
+          display: inline-block;
+          background-image: url('../img/bg_kremlin.png');
+          background-repeat: no-repeat;
+          .background-size(cover);
+          width: 100%;
+          height: 429px;
+        }
+      }
+    }
+  }
+  &#contacts{
+    background-image: url('../img/bg_tire_bottom.png');
+    height: @footer_height;
+    background-attachment: scroll;
+  }
+  &.slogan{
+    background: @transparent_black;
+    position: absolute;
+    width:500px;
+    top: 100px;
+    right: 100px;
   }
 }
 
+
 footer {
-  height: @footer_height;
-  background: black;
   color: white;
   text-align: center;
-  .phone {
+  font-size:25px;
+  .phone-str {
+    padding-top: 31px;
+    .phone {
+      margin:0 10px;
+    }
   }
   .mail{
+    padding-top: 20px;
+    a {
+      text-decoration: none;
+      color: @white;
+    }
   }
   .copyright{
-  }
-  .orange {
-    color: @orange;
+    padding-top: 20px;
+    font-size: 15px;
   }
 }
 
