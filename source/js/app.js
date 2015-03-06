@@ -1,6 +1,8 @@
 $(function () {
     $('#menu').slicknav({
-        label: ''
+        label: '',
+        prependTo: '.page-wrapper',
+        closeOnClick: true
     });
-    $('.slicknav_menu').prepend('<div class="logo"><img src="img/logo.png"/></div>');
+    $('.slicknav_menu').prepend('<div class="logo"><a href="#"><img src="img/logo.png"/></a></div>');
 });

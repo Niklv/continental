@@ -2,19 +2,22 @@ doctype html
 html(lang="en")
     head
         title Continental
+        link(rel="stylesheet" href="font/fonts.css")
         link(rel="stylesheet" href="css/app.css")
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport')
     body
-        header
-            .logo
-                a(href="#")
-                    img(src="img/logo.png")
-            ul#menu
-                each val in ['Главная', 'Сервисные центры', 'Правила', 'Контакты']
-                    li: a(href="#")= val
+        .page-wrapper
+            header
+                .logo
+                    a(href="#")
+                        img(src="img/logo.png")
+                ul#menu
+                    each val in ['Главная', 'Сервисные центры', 'Правила', 'Контакты']
+                        li: a(href="#")= val
 
-        .parallax.screen.screen-1.promo
-        .parallax.screen.screen-2.action
-        .parallax.screen.screen-3.map-selector
-        .parallax.screen.screen-4.map
-        footer
+            .parallax.screen.screen-1.promo
+            .parallax.screen.screen-2.action
+            .parallax.screen.screen-3.map-selector
+            .parallax.screen.screen-4.map
+            footer
         script(src="js/app.js")

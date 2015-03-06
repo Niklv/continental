@@ -1,6 +1,5 @@
 @import '../bower/lesshat/build/lesshat';
 @import (inline, css) '../bower/normalize-css/normalize.css';
-@import (inline, css) '../font/fonts.css';
 @import (inline, css) '../bower/slicknav/slicknav.css';
 
 @white: #FFFFFF;
@@ -9,43 +8,80 @@
 @black: #020202;
 @transparent_black: rgba(0, 0, 0, .75);
 
+@body_border: 19px;
+
 @header_height: 88px;
-@header_whitespace: 19px;
-@logo_width: 97px;
+@header_whitespace: @body_border;
+@logo_img_width: 160px;
+@logo_img_height: 97px;
+@logo_left_offset: 97px;
+@menu_bg: @transparent_black;
+@mobile_header_height: 44px;
+@mobile_logo_offset: 20px;
+@mobile_menu_font_size: 21px;
 
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'HeliosCond Light', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.page-wrapper {
+  position: relative;
+  margin: 0  @body_border;
 }
 
 header {
   margin: 0;
   position: fixed;
   top: 0;
-  width: 100%;
-  background: @transparent_black;
+  left: @body_border;
+  right: @body_border;
+  background: @menu_bg;
   border-top: white @header_whitespace solid;
   height: @header_height - @header_whitespace;
   .logo {
     float: left;
-    /*height: @header_height;
-    width: @logo_width;
-    background: url('img/logo.png');*/
+    height: @logo_img_height;
+    margin-top: -(@logo_img_height + @header_whitespace - @header_height);
+    margin-left: @logo_left_offset;
+    a {
+      display: block;
+      height: @logo_img_height;
+      width: @logo_img_width;
+    }
   }
   ul#menu {
     float: right;
     height: 100%;
-    margin: 0;
+    margin: 0 (52px - 16px) 0 0;
     padding: 0;
     display: block;
     list-style: none;
     li {
       float: left;
       height: 100%;
+      line-height: @header_height - @header_whitespace + 2px;
       a {
-        margin: 0 20px;
+        text-transform: uppercase;
+        padding: 0 14px;
         color: @white;
         text-decoration: none;
+        position: relative;
+        &:after {
+          content: "";
+          background: @white;
+          position: absolute;
+          bottom: 3px;
+          top: 3px;
+          left: 0;
+          width: 2px;
+        }
+      }
+      &:first-child a:after {
+        display: none;
       }
     }
   }
@@ -53,17 +89,70 @@ header {
 
 .slicknav_menu {
   display: none;
-  .logo {
-    float: left;
+}
+
+.parallax.screen {
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  .background-size(cover);
+  &.promo {
+    background-image: url('../img/bg_road.png');
   }
 }
 
-@media screen and (max-width: 40em) {
-  #menu {
+@media screen and (max-width: 875px) {
+  .page-wrapper {
+    margin: 0;
+  }
+
+  header {
     display: none;
   }
 
   .slicknav_menu {
     display: block;
+    background: @menu_bg;
+    position: fixed;
+    width: 100%;
+    height: @mobile_header_height;
+    padding: 0;
+    .logo {
+      float: left;
+      margin-left: @mobile_logo_offset;
+      height: @mobile_header_height;
+      img {
+        height: @mobile_header_height;
+      }
+    }
+    .slicknav_nav {
+      background: @menu_bg;
+      a {
+        text-align: center;
+        font-size: @mobile_menu_font_size;
+        &:hover {
+          .border-radius(none);
+          background: none;
+          color: @white;
+        }
+      }
+    }
+    .slicknav_btn {
+      height: @mobile_header_height;
+      margin: 0 20px;
+      padding: 0;
+      background: none;
+      .slicknav_icon {
+        padding-top: 12px;
+        .slicknav_icon-bar {
+          height: 2px;
+          width: 20px;
+          & + .slicknav_icon-bar {
+            margin-top: 5px;
+          }
+        }
+
+      }
+    }
   }
 }
