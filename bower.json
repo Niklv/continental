@@ -14,6 +14,8 @@
     "lesshat": "3.*.*",
     "jquery-parallax": "~1.1.3",
     "slicknav": "~1.0.1",
-    "normalize-css": "~3.0.2"
+    "normalize-css": "~3.0.2",
+    "parallax.js": "~1.3.2",
+    "skrollr": "~0.6.29"
   }
 }

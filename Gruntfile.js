@@ -15,9 +15,7 @@ module.exports = function (grunt) {
             js: {
                 src: [
                     'source/bower/jquery/jquery.js',
-                    'source/bower/jquery.scrollTo/jquery.scrollTo.js',
-                    'source/bower/jquery.serialScroll/jquery.serialScroll.js',
-                    'source/bower/jquery-parallax/scripts/jquery.parallax-1.1.3.js',
+                    'source/bower/skrollr/dist/skrollr.min.js',
                     'source/bower/slicknav/jquery.slicknav.js',
                     'source/js/app.js'
                 ],
@@ -73,8 +71,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat'/*, 'imagemin'*/]);
+    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin']);
 
 };
