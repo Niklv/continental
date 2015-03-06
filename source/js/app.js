@@ -15,12 +15,15 @@ $(function () {
         return false;
     });
 
-    skrollr.init();
+    skrollr.init({
+        smoothScrolling:false,
+        forceHeight: false
+    });
 });
 
 ymaps.ready(function () {
 
-    var myMap = new ymaps.Map('map', {
+    var myMap = new ymaps.Map('ymap', {
         center: [55.74, 37.58],
         zoom: 13,
         controls: []

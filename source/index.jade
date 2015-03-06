@@ -18,27 +18,26 @@ html(lang="en")
                     li: a(href="#service_centers")= 'Сервисные центры'
                     li: a(href="rules.html")= 'Правила'
                     li: a(href="#contacts")= 'Контакты'
-            #main.parallax.screen.screen-1.promo()
-                img(src="img/road_sign.png").sign.parallax-element
-                img(src="img/men_and_tire.png").tireman.parallax-element
-            //#slogan.parallax.screen.screen-2.slogan
-                H1 Безопастность - наш приоритет
-                H1 Хранение - на подарок
-                ol
-                    li При покупке комплекта шин
-                        span.orange Continental
-                        | 17 диаметра и выше
-                        img(src="img/wheel.png")
-                    li Сезонное хранение в подарок
-                        span.orange *
-                        img(src="img/wheel.png")
-                .note
-                    | Срок проведения акции: с 15 марта по 17 мая 2015г. Количество подарков ограничено.
-                    br
-                    | Детали акции, полный список моделей шин, участвующих в акции,
-                    | и дополнительную информацию можно найти на сайте:&nbsp;
-                    a.orange(href="http://www.contipromo.ru" target="_blank") www.contipromo.ru
-                a(href="#map") Где купить?
+            #main.parallax.screen.screen-1.promo
+                img(src="img/road_sign.png").sign.parallax-element(
+                    data-anchor-target="#main"
+                    data-top="top:40%;"
+                    data-top-bottom="top:140%"
+                )
+                img(src="img/men_and_tire.png").tireman.parallax-element(
+                    data-anchor-target="#main"
+                    data-top="bottom:0%;"
+                    data-top-bottom="bottom:-100%"
+                )
+                img(src="img/arrow.png").arrow.parallax-element(
+                    data-anchor-target="#main"
+                    data-top="bottom: 2%;"
+                    data-top-bottom="bottom: -98%"
+                )
+                div.where-to-buy.parallax-element.desktop-only
+                    include view/where_to_buy
+            #slogan.parallax.screen.screen-2.slogan.mobile-only
+                include view/where_to_buy
             #service_centers.parallax.screen.screen-3.map-selector
                 .row-wrapper
                     .cell-wrapper
@@ -64,7 +63,13 @@ html(lang="en")
                                         span.phone телефон
                                     li Адрес,
                                         span.phone телефон
-            #map.parallax.screen.screen-4.map
+            #map.parallax.screen.screen-4
+                #ymap(
+
+
+                    data-top-bottom="top: 100%; bottom: -100%;"
+                    data-bottom-top="top: -100%; bottom: 100%;"
+                )
             footer.parallax.screen#contacts
                 .phone-str Телефон горячей линии&nbsp;
                     span.orange.phone +7(985)750-02-50
