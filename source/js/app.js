@@ -40,5 +40,5 @@ ymaps.ready(function () {
         });
 //myMap.geoObjects.add(result.geoObjects);
     });
-    myMap.controls.add(searchControl);
 });
+
