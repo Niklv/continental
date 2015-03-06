@@ -111,6 +111,7 @@ header {
   background-attachment: fixed;
   border-bottom: 4px @orange solid;
   overflow: hidden;
+  .box-sizing(border-box);
   &#main {
     background-image: url('../img/bg_road.png');
   }
@@ -139,6 +140,8 @@ header {
     background-image: url('../img/bg_tire_bottom.png');
     height: @footer_height;
     background-attachment: scroll;
+    border-bottom: none;
+    margin-bottom: @body_border;
   }
   &.slogan{
     background: @transparent_black;
