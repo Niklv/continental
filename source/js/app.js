@@ -39,9 +39,9 @@ ymaps.ready(function () {
         );
 
 
-    var geolocation = ymaps.geolocation
+    var geolocation = ymaps.geolocation;
     myMap.behaviors.disable('scrollZoom');
-    myMap.controls.add('zoomControl')
+    myMap.controls.add('zoomControl');
    /* geolocation.get({
         provider: 'yandex',
         mapStateAutoApply: true
