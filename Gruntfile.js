@@ -30,11 +30,14 @@ module.exports = function (grunt) {
             }
         },
         jade: {
-            index: {
+            prod: {
                 options: {
                     pretty: true
                 },
-                files: {'build/index.html': 'source/index.jade'}
+                files: {
+                    'build/index.html': 'source/index.jade',
+                    'build/rules.html': 'source/rules.jade'
+                }
             }
         },
         watch: {
@@ -47,8 +50,8 @@ module.exports = function (grunt) {
                 tasks: ['less:css']
             },
             jade: {
-                files: ['source/index.jade'],
-                tasks: ['jade:index']
+                files: ['source/*.jade'],
+                tasks: ['jade:prod']
             }
         },
         imagemin: {
@@ -73,8 +76,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat'/*, 'imagemin'*/]);
+    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin']);
 
 };
