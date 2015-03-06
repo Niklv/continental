@@ -4,20 +4,29 @@ html(lang="en")
         title Continental
         link(rel="stylesheet" href="font/fonts.css")
         link(rel="stylesheet" href="css/app.css")
+        meta(charset="UTF-8")
         meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport')
     body
         .page-wrapper
             header
                 .logo
-                    a(href="#")
+                    a(href="#main")
                         img(src="img/logo.png")
                 ul#menu
-                    each val in ['Главная', 'Сервисные центры', 'Правила', 'Контакты']
-                        li: a(href="#")= val
-
-            .parallax.screen.screen-1.promo
-            .parallax.screen.screen-2.action
-            .parallax.screen.screen-3.map-selector
-            .parallax.screen.screen-4.map
-            footer
+                    li: a(href="#main")= 'Главная'
+                    li: a(href="#service_centers")= 'Сервисные центры'
+                    li: a(href="#rules")= 'Правила'
+                    li: a(href="#contacts")= 'Контакты'
+            #main.parallax.screen.screen-1.promo
+                img(src="img/road_sign.png").sign.parallax-element
+                img(src="img/men_and_tire.png").tireman.parallax-element
+            #rules.parallax.screen.screen-2.rules
+            #service_centers.parallax.screen.screen-3.map-selector
+            #map.parallax.screen.screen-4.map
+            footer#contacts
+                .phone Телефон горячей линии
+                    span.orange +7(985)750-02-50
+                    | - работает с 10 до 19.
+                .mail mail@contipromo.ru
+                .copyright © Continental AG 2015
         script(src="js/app.js")

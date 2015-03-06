@@ -57,10 +57,10 @@ module.exports = function (grunt) {
             },
             build:{
                 files: [{
-                    expand: true,                  // Enable dynamic expansion
-                    cwd: 'source/',                   // Src matches are relative to this path
-                    src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'build/'                  // Destination path prefix
+                    expand: true,
+                    cwd: 'source/',
+                    src: ['img/*.{png,jpg,gif}'],
+                    dest: 'build/'
                 }]
             }
 
@@ -73,8 +73,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    //grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin']);
+    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat'/*, 'imagemin'*/]);
 
 };
