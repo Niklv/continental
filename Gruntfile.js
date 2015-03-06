@@ -28,11 +28,14 @@ module.exports = function (grunt) {
             }
         },
         jade: {
-            index: {
+            prod: {
                 options: {
                     pretty: true
                 },
-                files: {'build/index.html': 'source/index.jade'}
+                files: {
+                    'build/index.html': 'source/index.jade',
+                    'build/rules.html': 'source/rules.jade'
+                }
             }
         },
         watch: {
@@ -45,8 +48,8 @@ module.exports = function (grunt) {
                 tasks: ['less:css']
             },
             jade: {
-                files: ['source/index.jade'],
-                tasks: ['jade:index']
+                files: ['source/*.jade'],
+                tasks: ['jade:prod']
             }
         },
         imagemin: {
