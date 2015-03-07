@@ -8,7 +8,7 @@ $(function () {
 
 
 
-    $('ul#menu a, .logo a, .slicknav_nav a').click(function(){
+    $('ul#menu a, .logo a, .slicknav_nav a, .buy_button, .scrollTo').click(function(){
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
         }, 500);
