@@ -33,6 +33,10 @@ ymaps.ready(function () {
         navigator.geolocation.getCurrentPosition(
             function geolocationSuccess(position) {
                 var cords = position.coords;
+                if(55.5254<cords.latitude&&cords.latitude<55.9253&&37.2939<cords.longitude&&cords.longitude<37.8707)setCity(0);
+                if(59.6023<cords.latitude&&cords.latitude<60.2025&&29.6239<cords.longitude&&cords.longitude<30.6841)setCity(1);
+                if(55.6336<cords.latitude&&cords.latitude<55.9462&&48.7812<cords.longitude&&cords.longitude<49.3566)setCity(2);
+
                 myMap.setCenter([cords.latitude, cords.longitude]);
             },
             geolocationFailure
@@ -53,6 +57,8 @@ ymaps.ready(function () {
         });
    // myMap.geoObjects.add(result.geoObjects);
     });*/
+
+
 
 
 
@@ -135,10 +141,10 @@ ymaps.ready(function () {
         );
 
     var arr=[
-        ['Автоэксперт','Название','Телефон','autoexpert.ru','shino.ru']
+        ['Автоэксперт','Название','Телефон','autoexpert.ru','shino.ru',[55.7499,37.6214]]
     ];
 
-    var myPlacemark = new ymaps.Placemark([55.74, 37.58], {
+    var myPlacemark = new ymaps.Placemark(arr[0][5], {
         balloonContent:'<h1>' +
         arr[0][0] +
         '</h1>' +
@@ -159,17 +165,17 @@ ymaps.ready(function () {
         '</a>'
 
     }, {
-        iconLayout: 'islands#circleIcon',
+
         balloonShadow: false,
         balloonLayout: MyBalloonLayout,
         balloonContentLayout: MyBalloonContentLayout,
         balloonPanelMaxMapArea: 0,
         balloonOffset: [-300, -178],
-        hideIconOnBalloonOpen: false
-        /*iconLayout: 'default#image',
-        iconImageHref: '/maps/doc/jsapi/2.1/examples/images/myIcon.gif',//собственная иконка
-        iconImageSize: [30, 42],
-        iconImageOffset: [-3, -42]*/
+        hideIconOnBalloonOpen: false,
+        iconLayout: 'default#image',
+        iconImageHref: 'img/pin.png',//собственная иконка
+        iconImageSize: [128, 128],
+        iconImageOffset: [-30, -110]
     });
 
 
@@ -183,4 +189,7 @@ function getGeolacation(){
 
 function geolocationFailure(positionError) {
 
+}
+function setCity(cityNum){
+    //Москва 0 Питер 1 Казань 2
 }
