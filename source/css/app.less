@@ -219,7 +219,23 @@ footer {
   }
 }
 
+.desktop-only{
+  display: block;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
 @media screen and (max-width: 875px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
   .page-wrapper {
     margin: 0;
   }
@@ -235,6 +251,7 @@ footer {
     width: 100%;
     height: @mobile_header_height;
     padding: 0;
+    z-index: 999;
     .logo {
       float: left;
       margin-left: @mobile_logo_offset;
