@@ -64,12 +64,6 @@ ymaps.ready(function () {
         '$[[options.contentLayout observeSize minWidth=235 maxWidth=235 maxHeight=350]]' +
         '</div>' +
         '</div>', {
-            /**
-             * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
-             * @function
-             * @name build
-             */
             build: function () {
                 this.constructor.superclass.build.call(this);
 
@@ -80,26 +74,12 @@ ymaps.ready(function () {
                 this._$element.find('.balloon-close')
                     .on('click', $.proxy(this.onCloseClick, this));
             },
-
-            /**
-             * Удаляет содержимое макета из DOM.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#clear
-             * @function
-             * @name clear
-             */
             clear: function () {
                 this._$element.find('.close')
                     .off('click');
 
                 this.constructor.superclass.clear.call(this);
             },
-
-            /**
-             * Метод будет вызван системой шаблонов АПИ при изменении размеров вложенного макета.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
-             * @function
-             * @name onSublayoutSizeChange
-             */
             onSublayoutSizeChange: function () {
                 MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
 
@@ -111,39 +91,17 @@ ymaps.ready(function () {
 
                 this.events.fire('shapechange');
             },
-
-            /**
-             * Сдвигаем балун, чтобы "хвостик" указывал на точку привязки.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
-             * @function
-             * @name applyElementOffset
-             */
             applyElementOffset: function () {
                 this._$element.css({
                     left: -(this._$element[0].offsetWidth / 2),
                     top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
                 });
             },
-
-            /**
-             * Закрывает балун при клике на крестик, кидая событие "userclose" на макете.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
-             * @function
-             * @name onCloseClick
-             */
             onCloseClick: function (e) {
                 e.preventDefault();
 
                 this.events.fire('userclose');
             },
-
-            /**
-             * Используется для автопозиционирования (balloonAutoPan).
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
-             * @function
-             * @name getClientBounds
-             * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
-             */
             getShape: function () {
                 if(!this._isElement(this._$element)) {
                     return MyBalloonLayout.superclass.getShape.call(this);
@@ -179,8 +137,8 @@ ymaps.ready(function () {
     var myPlacemark = new ymaps.Placemark([55.74, 37.58], {
         balloonContent:'<h1>Автоэксперт</h1>' +
         '<p>ljvf dssdsdf</br>tel 36484</br>' +
-        '<a class="orange" target="_blank" href="http://www.autoexpert.ru">www.autoexpert.ru</a></br>'+
-        '<a class="orange" target="_blank" href="http://www.shino.ru">www.shino.ru</a>'
+        '<a class="orange" href="http://www.autoexpert.ru">www.autoexpert.ru</a></br>'+
+        '<a class="orange"  href="http://www.shino.ru">www.shino.ru</a>'
 
     }, {
         iconLayout: 'islands#circleIcon',
