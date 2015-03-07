@@ -65,7 +65,34 @@ module.exports = function (grunt) {
                 }]
             }
 
+        },
+        minified: {
+            target:{
+                files: [{
+                    expand: true,
+                    cwd: 'build/',
+                    src: ['js/*.js', 'js/!*.min.js'],
+                    dest:'build/',
+                    ext: '.js'
+
+                }]
+
+            }
+
+        },
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'build/',
+                    src: ['css/*.css', 'css/!*.min.css'],
+                    dest: 'build/',
+                    ext: '.css'
+                }]
+            }
+
         }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -75,7 +102,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-minified');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin']);
+    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin','minified','cssmin']);
 
 };
