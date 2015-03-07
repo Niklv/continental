@@ -35,6 +35,14 @@ html, body {
   color: @orange;
 }
 
+.bold{
+  font-family: 'HeliosCond Bold', sans-serif;
+}
+
+.light{
+  font-family: 'HeliosCond Light', sans-serif;
+}
+
 .page-wrapper {
   position: relative;
   margin: 0  @body_border;
@@ -136,10 +144,10 @@ header {
       }
       &.where-to-buy{
         background: @transparent_black;
-        width: 39%;
-        height: 60%;
+        width: 490px;
+        height: 360px;
         top: 20%;
-        right: 5%;
+        right: 4%;
         padding: 1em;
         text-shadow: 0px 3px 10px @transparent_black;
         color: @white;
@@ -147,7 +155,55 @@ header {
           margin:0;
           .orange;
           font-family: 'HeliosCond Bold', sans-serif;
-          font-size:2em;
+          font-size:1.9em;
+        }
+        ol {
+          list-style: none;
+          margin: 20px 0 0 0;
+          padding: 0;
+          li {
+            clear:both;
+            font-size: 1.4em;
+            .text {
+              display:block;
+            }
+            &:first-child .text{
+              padding-top:5px;
+            }
+            &:nth-child(2) .text{
+              padding-top:25px;
+            }
+            .number {
+              float:left;
+              font-size: 1.7em;
+              font-family: 'HeliosCond Bold', sans-serif;
+              padding: 10px 10px 10px 0;
+            }
+            img {
+              float:right;
+            }
+          }
+        }
+        .note {
+          clear:both;
+          font-size: 0.6em;
+          font-family: 'HeliosCond Light', sans-serif;
+          font-weight: normal;
+          padding-top: 20px;
+        }
+        .buy_button {
+          display: block;
+          position: absolute;
+          right: 1em;
+          bottom: 1em;
+          color: @orange;
+          border: 3px solid @orange;
+          padding: 7px 10px;
+          text-decoration: none;
+          .light;
+          font-size: 1em;
+          text-transform: uppercase;
+
         }
       }
     }
