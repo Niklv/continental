@@ -134,11 +134,29 @@ ymaps.ready(function () {
             '<div class="popover-content">$[properties.balloonContent]</div>'
         );
 
+    var arr=[
+        ['Автоэксперт','Название','Телефон','autoexpert.ru','shino.ru']
+    ];
+
     var myPlacemark = new ymaps.Placemark([55.74, 37.58], {
-        balloonContent:'<h1>Автоэксперт</h1>' +
-        '<p>ljvf dssdsdf</br>tel 36484</br>' +
-        '<a class="orange" href="http://www.autoexpert.ru">www.autoexpert.ru</a></br>'+
-        '<a class="orange"  href="http://www.shino.ru">www.shino.ru</a>'
+        balloonContent:'<h1>' +
+        arr[0][0] +
+        '</h1>' +
+        '<p>' +
+        arr[0][1] +
+        '</br>' +
+        arr[0][2] +
+        '</br>' +
+        '<a class="orange" href="http://www.' +
+        arr[0][3] +
+        '">www.' +
+        arr[0][3] +
+        '</a></br>'+
+        '<a class="orange"  href="http://www.' +
+        arr[0][4] +
+        '">www.' +
+        arr[0][4] +
+        '</a>'
 
     }, {
         iconLayout: 'islands#circleIcon',
