@@ -21,7 +21,7 @@
 @mobile_menu_font_size: 21px;
 
 
-@footer_height: 145px;
+@footer_height: 165px;
 
 html, body {
   margin: 0;
@@ -156,11 +156,13 @@ header {
           .orange;
           font-family: 'HeliosCond Bold', sans-serif;
           font-size:1.6em;
+          text-transform: uppercase;
         }
         ol {
           list-style: none;
           margin: 20px 0 0 0;
           padding: 0;
+          font-family: "HeliosCond Bold",sans-serif;
           li {
             clear:both;
             font-size: 1.4em;
@@ -186,10 +188,13 @@ header {
         }
         .note {
           clear:both;
-          font-size: 0.6em;
+          font-size: 0.75em;
           font-family: 'HeliosCond Light', sans-serif;
           font-weight: normal;
           padding-top: 20px;
+          a{
+            font-family: "HeliosCond Bold",sans-serif;
+          }
         }
         .buy_button {
           display: block;
@@ -219,8 +224,8 @@ header {
         display: table-cell;
         vertical-align: middle;
         .white-line {
-          display: inline-block;
-          background-image: url('../img/bg_kremlin.png');
+          /*display: inline-block;*/
+         /* background-image: url('../img/bg_kremlin.png');*/
           background-repeat: no-repeat;
           .background-size(cover);
           width: 100%;
@@ -264,6 +269,7 @@ footer {
     padding-top: 31px;
     .phone {
       margin:0 10px;
+      font-family: "HeliosCond Bold",sans-serif;;
     }
   }
   .mail{
@@ -359,7 +365,7 @@ footer {
   color:@white;
   font-weight: 900;
   h1, h2{
-    margin:0;
+    margin: 0 0 0 -10px;
     .orange;
     font-family: 'HeliosCond Bold', sans-serif;
     font-size:32px;
@@ -370,6 +376,10 @@ footer {
     text-align: center;
     font-family: 'HeliosCond Light', sans-serif;
     margin-top: 10px;
+    margin-right: 0;
+    margin-left: -15px;
+    margin-bottom: 0;
+
   }
   a{
     font-size: 20px;
@@ -432,49 +442,172 @@ footer {
     position: absolute;
   }
 }
-.service-list{
-  height: 100%;
-  right: 0;
-  width: 40%;
-  h1{
-    text-align: center;
-    font-family: "HeliosCond Bold",sans-serif;
-    margin-top: 75px;
-    margin-bottom: 0px;
-    font-size: 30px;
+#moscow.white-line {
+  background-image: url('../img/bg_kremlin.png');
+  .service-list {
+    height: 100%;
+    right: 0;
+    width: 40%;
+    h1 {
+      text-align: center;
+      font-family: "HeliosCond Bold", sans-serif;
+      margin-top: 75px;
+      margin-bottom: 0px;
+      font-size: 30px;
 
-    margin-left: -80px;
-  }
-  h2{
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-size: 20px;
+      margin-left: -80px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 20px;
 
-    margin-left: -80px;
+      margin-left: -80px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      color: @light_orange;
+      font-family: "HeliosCond Light", sans-serif;
+      font-size: 20px;
+      height: 19px;
+      font-weight: bold;
+      margin-left: -80px;
+    }
+    ul {
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-left: -80px;
+      li {
+        padding-bottom: 15px;
+        font-family: "HeliosCond Light", sans-serif;
+      }
+    }
   }
-  a{
-    display: block;
-    text-align: center;
-    color: @light_orange;
-    font-family: "HeliosCond",sans-serif;
-    font-size: 20px;
-    height: 19px;
+}
+#piter.white-line {
+  background-image: url('../img/bg_piter.png');
+  display: none;
+  .service-list {
+    height: 100%;
+    right: 0;
+    width: 40%;
+    h1 {
+      text-align: center;
+      font-family: "HeliosCond Bold", sans-serif;
+      margin-top: 75px;
+      margin-bottom: 0px;
+      font-size: 30px;
 
-    margin-left: -80px;
+      margin-left: -80px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 20px;
+
+      margin-left: -80px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      color: @light_orange;
+      font-family: "HeliosCond Light", sans-serif;
+      font-size: 20px;
+      height: 19px;
+      font-weight: bold;
+      margin-left: -80px;
+    }
+    ul {
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-left: -80px;
+      li {
+        padding-bottom: 15px;
+        font-family: "HeliosCond Light", sans-serif;
+      }
+    }
   }
-  ul{
-    list-style-type: none;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    margin-left: -80px;
-    li{
-      padding-bottom: 15px;
-      font-family: "HeliosCond Light",sans-serif;
+}
+#kazan.white-line {
+  background-image: url('../img/bg_kazan.png');
+  display: none;
+  .service-list {
+    height: 100%;
+    right: 0;
+    width: 40%;
+    h1 {
+      text-align: center;
+      font-family: "HeliosCond Bold", sans-serif;
+      margin-top: 75px;
+      margin-bottom: 0px;
+      font-size: 30px;
+
+      margin-left: -80px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 20px;
+
+      margin-left: -80px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      color: @light_orange;
+      font-family: "HeliosCond Light", sans-serif;
+      font-size: 20px;
+      height: 19px;
+      font-weight: bold;
+      margin-left: -80px;
+    }
+    ul {
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-left: -80px;
+      li {
+        padding-bottom: 15px;
+        font-family: "HeliosCond Light", sans-serif;
+      }
     }
   }
 }
 
+
+
+
+//////////rules
+.rules-screan {
+  background-image: url('../img/tires.png');
+  display: table;
+  width: 100%;
+  height: 900px;
+  .row-wrapper {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+    background-color: @black;
+    .cell-wrapper{
+      text-align: center;
+      h1{
+        margin-top: 40px;
+        color: @orange;
+      }
+      p{
+        color: @white;
+      }
+    }
+  }
+}
 
 
