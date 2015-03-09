@@ -19,6 +19,13 @@ $(function () {
         smoothScrolling:false,
         forceHeight: false
     });
+
+    $('.city li').click(function(){
+        for(var i=0; i<$('ul.city').children().length; i++) {
+            $('ul.city').children()[i].className = '';
+        }
+        $(this)[0].className='selected'
+    });
 });
 
 ymaps.ready(function () {
