@@ -463,26 +463,52 @@ footer {
 
 
 //////////rules
+.page-wrapper{
+  margin-bottom: 19px;
+  background-color: @black;
 .rules-screan {
+  background-repeat: no-repeat;
   background-image: url('../img/tires.png');
+  background-position: 10% 80%;
   display: table;
   width: 100%;
-  height: 900px;
+  padding-bottom: 100px;
   .row-wrapper {
     display: table-row;
     width: 100%;
     height: 100%;
-    background-color: @black;
+
+
     .cell-wrapper{
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 100px;
       text-align: center;
       h1{
-        margin-top: 40px;
+        //margin-top: 40px;
         color: @orange;
+        font-family: "HeliosCond Bold", sans-serif;
+        font-size: 42px;
+        font-weight: bold;
+        text-transform: uppercase;
       }
       p{
         color: @white;
+        font-family: "HeliosCond",sans-serif;
+        font-size:20px;
+        font-weight: 100;
       }
     }
+
+  }
+
+}
+  footer{
+    color: white;
+    text-align: center;
+    padding-bottom: 19px;
+    font-family: "HeliosCond Light",sans-serif;
+    font-size: 16px;
   }
 }
 
