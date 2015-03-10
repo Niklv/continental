@@ -135,12 +135,14 @@ header {
       position: absolute;
       &.sign{
         height: 85%;
-        top: 30%;
+        max-height: 70vw;
+        bottom: -15%;
         left: 3%;
         z-index: 2;
       }
       &.tireman {
         height: 85%;
+        max-height: 70vw;
         bottom: 0%;
         left:9%;
         z-index: 1;
@@ -486,13 +488,21 @@ footer {
   }
 }
 
-@media (max-width: 1199px){
-  #main.parallax.screen .parallax-element.where-to-buy {
-    width: 400px;
-    height: 300px;
-    font-size: 16px;
-    ol li img {
-      height: 56px;
+@media (max-width: 1500px){
+  #main.parallax.screen .parallax-element{
+    &.tireman {
+      height: 73%;
+    }
+    &.sign {
+      height: 73%;
+    }
+    &.where-to-buy {
+      width: 400px;
+      height: 300px;
+      font-size: 16px;
+      ol li img {
+        height: 56px;
+      }
     }
   }
   #service_centers{
@@ -538,14 +548,9 @@ footer {
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1250px) {
   .smallest-buy();
 }
-
-@media (max-device-aspect-ratio: 16/9) {
-  .smallest-buy();
-}
-
 
 //
 //
@@ -618,6 +623,7 @@ footer {
       }
     }
   }
+
 
 
 
