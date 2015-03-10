@@ -1,5 +1,7 @@
+var cityMap;
 
 $(function () {
+
     $('#menu').slicknav({
         label: '',
         prependTo: '.page-wrapper',
@@ -42,10 +44,10 @@ ymaps.ready(function () {
 
     var myMap = new ymaps.Map('ymap', {
         center: [55.74, 37.58],
-        zoom: 15,
+        zoom: 13,
         controls: []
     });
-
+    cityMap=myMap;
     if (navigator.geolocation)
         navigator.geolocation.getCurrentPosition(
             function geolocationSuccess(position) {
@@ -54,10 +56,11 @@ ymaps.ready(function () {
                 if (59.6023 < cords.latitude && cords.latitude < 60.2025 && 29.6239 < cords.longitude && cords.longitude < 30.6841)setCity(1);
                 if (55.6336 < cords.latitude && cords.latitude < 55.9462 && 48.7812 < cords.longitude && cords.longitude < 49.3566)setCity(2);
 
-                myMap.setCenter([cords.latitude, cords.longitude]);
+                myMap.setCenter([cords.latitude, cords.longitude],13);
             },
             geolocationFailure
         );
+    else setCity(0);
 
 
     var geolocation = ymaps.geolocation;
@@ -160,12 +163,12 @@ ymaps.ready(function () {
         ['Автоэксперт', 'ул. Краснодарская, д.72, к.1  ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.6695,37.7798]],
         ['Автоэксперт', 'ул. Куликовская, вл.10, стр.1  ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.5729,37.5642]],
         ['Автоэксперт', 'ул. Березовая алеея, 2а ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.9994,37.2000]],
-        ['Эксклюзив', 'Ул. Большевиков, д. 42  ', 'Телефон', 'tyres.spb.ru', '', [54.7449, 37.6214]],
-        ['Эксклюзив', 'Сердобольская ул., д. 3  ', '+7 (812) 492 02 13', 'tyres.spb.ru', '', [53.7439, 37.6214]],
-        ['Эксклюзив', 'Ул. Оптовиков, д. 15  ', '+7 (812) 320 18 85', 'tyres.spb.ru', '', [52.7429, 37.6214]],
-        ['Вершина', 'Горьковское ш., 47/1  ', '+7 (843) 290 10 40', 'vershina-kazan.ru', '', [51.7419, 37.6214]],
-        ['Вершина', 'пр-т Ямашева, д.61  ', '+7 (843) 517 53 75', 'vershina-kazan.ru', '', [50.7409, 37.6214]],
-        ['Вершина', 'пр-т Ямашева, д.92 Б  ', '+7 (843) 521-77-33', 'vershina-kazan.ru', '', [49.7400, 37.6214]]
+        ['Эксклюзив', 'пр-т Большевиков, д. 42  ', 'Телефон', 'tyres.spb.ru', '', [59.8891,30.4913]],
+        ['Эксклюзив', 'Сердобольская ул., д. 3  ', '+7 (812) 492 02 13', 'tyres.spb.ru', '', [59.9945,30.3273]],
+        ['Эксклюзив', 'ул. Оптиков, д. 15  ', '+7 (812) 320 18 85', 'tyres.spb.ru', '', [59.9982,30.2351]],
+        ['Вершина', 'Горьковское ш., 47/1  ', '+7 (843) 290 10 40', 'vershina-kazan.ru', '', [55.8264,49.0253]],
+        ['Вершина', 'пр-т Ямашева, д.61  ', '+7 (843) 517 53 75', 'vershina-kazan.ru', '', [55.8255,49.1280]],
+        ['Вершина', 'пр-т Ямашева, д.92 Б  ', '+7 (843) 521-77-33', 'vershina-kazan.ru', '', [55.8276,49.1502]]
 
     ];
     for(var i=0;i<arr.length;i++){
@@ -200,7 +203,7 @@ function getGeolacation(){
 
 
 function geolocationFailure(positionError) {
-
+    setCity(0);
 }
 function setCity(cityNum){
     $('ul.city:visible').children()[cityNum].click();
@@ -227,6 +230,11 @@ function setCityContent(cityNum){
             break;
     }
     $('ul.city:visible').children()[cityNum].className='selected';
+
+    var cords=[[55.7538,37.6201],[59.9391,30.3159],[55.7958,49.1066]];
+    cityMap.setCenter(cords[cityNum],13);
+
+
 }
 function getCityNumber(){
 
