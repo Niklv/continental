@@ -228,10 +228,8 @@ header {
           &:hover{
             color: @black;
             background-color:@orange;
-            -webkit-transition:all .2s;
-            transition:all .2s
+            .transition(all .2s)
           }
-
         }
       }
     }
@@ -903,6 +901,11 @@ footer {
         .light;
         font-size: 1em;
         text-transform: uppercase;
+        &:hover{
+          color: @black;
+          background-color:@orange;
+          .transition(all .2s)
+        }
       }
     }
   }
