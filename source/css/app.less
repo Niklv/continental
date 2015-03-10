@@ -214,9 +214,17 @@ header {
           border: 3px solid @orange;
           padding: 7px 10px;
           text-decoration: none;
+          font-weight: 900;
+          font-family: "HeliosCond Bold",sans-serif;
           .light;
           font-size: 1em;
           text-transform: uppercase;
+          &:hover{
+            color: @black;
+            background-color:@orange;
+            -webkit-transition:all .2s;
+            transition:all .2s
+          }
 
         }
       }
@@ -540,7 +548,7 @@ footer {
   #main.parallax.screen .parallax-element.where-to-buy {
     width: 285px;
     height: 222px;
-    font-size: 0.8em;
+    font-size: 0.76em;
     padding: 0.7em;
     h1 {
       font-size: 1.2em;
