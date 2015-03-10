@@ -198,6 +198,9 @@ header {
               height: 60px;
               margin-top: -50px;
             }
+            &:first-child img {
+              margin-top: -57px;
+            }
           }
         }
         .note {
@@ -668,6 +671,19 @@ footer {
         }
 
       }
+      &.slicknav_open{
+        .slicknav_icon{
+          .slicknav_icon-bar:nth-child(2){
+            display: none;
+          }
+          .slicknav_icon-bar:nth-child(1){
+            .transform(rotate(45) translate(5px, 5px));
+          }
+          .slicknav_icon-bar:nth-child(3){
+            .transform(rotate(360-45) translate(0px, 0px));
+          }
+        }
+      }
     }
   }
   
@@ -843,9 +859,6 @@ footer {
         padding: 1em 0;
         font-size: 1em;
       }
-
-      //height: 70px;
-//      font-size: 20px;
 
     }
     &.slogan{
