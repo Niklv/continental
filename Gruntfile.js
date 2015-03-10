@@ -105,6 +105,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-minified');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin','minified','cssmin']);
+    grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'concat', 'imagemin', /*'minified',*/'cssmin']);
 
 };

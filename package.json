@@ -16,6 +16,7 @@
     "grunt-contrib-imagemin": "^0.9.3",
     "grunt-contrib-jade": "^0.14.1",
     "grunt-contrib-less": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-minified": "0.0.6"
   }
 }
