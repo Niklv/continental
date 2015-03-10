@@ -477,9 +477,12 @@ footer {
 
 
 //////////rules
-.page-wrapper{
+#rules.page-wrapper{
   margin-bottom: 19px;
   background-color: @black;
+  header{
+    display: block;
+  }
 .rules-screan {
   background-repeat: no-repeat;
   background-image: url('../img/tires.png');
@@ -494,8 +497,8 @@ footer {
 
 
     .cell-wrapper{
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 10%;
+      padding-right: 10%;
       padding-top: 100px;
       text-align: center;
       h1{
@@ -663,6 +666,11 @@ footer {
   }
 
 
-
-
+  ////rulespage
+  #rules.page-wrapper{
+    margin: 0  @body_border;
+    header {
+      display: block;
+    }
+  }
 }
