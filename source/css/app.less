@@ -88,6 +88,13 @@ header {
         position: relative;
         &:hover {
           color: @orange;
+
+          //font-family: "HeliosCond Bold", sans-serif;
+          //font-size: 22px;
+        }
+        .selected{
+          color: @orange;
+          font-family: "HeliosCond Bold", sans-serif;
         }
         &:after {
           content: "";
@@ -128,15 +135,15 @@ header {
       display: block;
       position: absolute;
       &.sign{
-        height: 100%;
-        top: 40%;
-        left: 8%;
+        height: 85%;
+        top: 30%;
+        left: 3%;
         z-index: 2;
       }
       &.tireman {
         height: 85%;
         bottom: 0%;
-        left:18%;
+        left:9%;
         z-index: 1;
       }
       &.arrow{
@@ -193,6 +200,7 @@ header {
           font-weight: normal;
           padding-top: 20px;
           a{
+            text-decoration: none;
             font-family: "HeliosCond Bold",sans-serif;
           }
         }
@@ -233,6 +241,95 @@ header {
           position: relative;
           div{
             position: absolute;
+          }
+          .service-list {
+            height: 100%;
+            right: 0;
+            width: 40%;
+            h1 {
+              text-align: center;
+              font-family: "HeliosCond Bold", sans-serif;
+              margin-top: 75px;
+              margin-bottom: 0px;
+              font-size: 1.5em;
+
+              margin-left: -80px;
+            }
+            h2 {
+              text-align: center;
+              margin-top: 0px;
+              margin-bottom: 10px;
+              font-size: 1em;
+
+              margin-left: -80px;
+            }
+            a {
+              display: block;
+              text-align: center;
+              color: @light_orange;
+              font-family: "HeliosCond Bold", sans-serif;
+              font-size: 0.9em;
+              height: 19px;
+              font-weight: bold;
+              margin-left: -80px;
+            }
+            ul {
+              list-style-type: none;
+              width: 100%;
+              text-align: center;
+              margin-top: 10px;
+              margin-left: -80px;
+              li {
+                padding-bottom: 15px;
+                font-family: "HeliosCond", sans-serif;
+                font-weight: 100;
+                font-size: 1em;
+                .phone{
+                  font-family: "HeliosCond Bold", sans-serif;
+                }
+
+              }
+            }
+          }
+          .city-selector{
+            height: 100%;
+            width: 40%;
+            .city{
+              top: 50%;
+              left: 50%;
+              position: absolute;
+              margin-top: -90px;
+              margin-left: -130px;
+              list-style-type: none;
+              li{
+                padding: 0px 10px 34px 10px;
+                font-family: 'HeliosCond Bold', sans-serif;
+                font-size:1.6em;
+                cursor: pointer;
+                text-decoration: none;
+                color: black;
+
+
+              }
+              li.selected{
+                color: @orange;
+                background: url('../img/wheel_selector.png') no-repeat 0px 3px;
+                padding-left: 50px;
+                margin-left: -40px;
+
+
+              }
+            }
+          }
+          .service-logo{
+            height: 100%;
+            left: 40%;
+            width: 20%;
+            img{
+              left: 50%;
+              top: 50%;
+              position: absolute;
+            }
           }
         }
       }
@@ -400,186 +497,30 @@ footer {
   margin-top: -10px;
 }
 ///////////////////////////////////////////
-.city-selector{
-  height: 100%;
-  width: 40%;
-  .city{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    margin-top: -90px;
-    margin-left: -130px;
-    list-style-type: none;
-    li{
-      padding: 0px 10px 34px 10px;
-      font-family: 'HeliosCond Bold', sans-serif;
-      font-size:1.6em;
-      cursor: pointer;
-        text-decoration: none;
-        color: black;
 
-
-    }
-    li.selected{
-      color: @orange;
-      background: url('../img/wheel_selector.png') no-repeat 0px 3px;
-      padding-left: 50px;
-      margin-left: -40px;
-
-
-    }
-  }
-}
-.service-logo{
-  height: 100%;
-  left: 40%;
-  width: 20%;
-  img{
-    left: 50%;
-    top: 50%;
-    margin-left: -78px;
-    margin-top: -26px;
-    position: absolute;
-  }
-}
 #moscow.white-line {
   background-image: url('../img/bg_kremlin.png');
-  .service-list {
-    height: 100%;
-    right: 0;
-    width: 40%;
-    h1 {
-      text-align: center;
-      font-family: "HeliosCond Bold", sans-serif;
-      margin-top: 75px;
-      margin-bottom: 0px;
-      font-size: 30px;
-
-      margin-left: -80px;
-    }
-    h2 {
-      text-align: center;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      font-size: 20px;
-
-      margin-left: -80px;
-    }
-    a {
-      display: block;
-      text-align: center;
-      color: @light_orange;
-      font-family: "HeliosCond Light", sans-serif;
-      font-size: 20px;
-      height: 19px;
-      font-weight: bold;
-      margin-left: -80px;
-    }
-    ul {
-      list-style-type: none;
-      width: 100%;
-      text-align: center;
-      margin-top: 10px;
-      margin-left: -80px;
-      li {
-        padding-bottom: 15px;
-        font-family: "HeliosCond Light", sans-serif;
-      }
-    }
+  .service-logo img{
+    margin-left: -78px;
+    margin-top: -26px;
   }
+
 }
 #piter.white-line {
   background-image: url('../img/bg_piter.png');
   display: none;
-  .service-list {
-    height: 100%;
-    right: 0;
-    width: 40%;
-    h1 {
-      text-align: center;
-      font-family: "HeliosCond Bold", sans-serif;
-      margin-top: 75px;
-      margin-bottom: 0px;
-      font-size: 30px;
-
-      margin-left: -80px;
-    }
-    h2 {
-      text-align: center;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      font-size: 20px;
-
-      margin-left: -80px;
-    }
-    a {
-      display: block;
-      text-align: center;
-      color: @light_orange;
-      font-family: "HeliosCond Light", sans-serif;
-      font-size: 20px;
-      height: 19px;
-      font-weight: bold;
-      margin-left: -80px;
-    }
-    ul {
-      list-style-type: none;
-      width: 100%;
-      text-align: center;
-      margin-top: 10px;
-      margin-left: -80px;
-      li {
-        padding-bottom: 15px;
-        font-family: "HeliosCond Light", sans-serif;
-      }
-    }
+  .service-logo img{
+    margin-left: -100px;
+    margin-top: -21px;
+    width: 180px;
   }
 }
 #kazan.white-line {
   background-image: url('../img/bg_kazan.png');
   display: none;
-  .service-list {
-    height: 100%;
-    right: 0;
-    width: 40%;
-    h1 {
-      text-align: center;
-      font-family: "HeliosCond Bold", sans-serif;
-      margin-top: 75px;
-      margin-bottom: 0px;
-      font-size: 30px;
-
-      margin-left: -80px;
-    }
-    h2 {
-      text-align: center;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      font-size: 20px;
-
-      margin-left: -80px;
-    }
-    a {
-      display: block;
-      text-align: center;
-      color: @light_orange;
-      font-family: "HeliosCond Light", sans-serif;
-      font-size: 20px;
-      height: 19px;
-      font-weight: bold;
-      margin-left: -80px;
-    }
-    ul {
-      list-style-type: none;
-      width: 100%;
-      text-align: center;
-      margin-top: 10px;
-      margin-left: -80px;
-      li {
-        padding-bottom: 15px;
-        font-family: "HeliosCond Light", sans-serif;
-      }
-    }
+  .service-logo img{
+    margin-left: -78px;
+    margin-top: -34px;
   }
 }
 
@@ -610,4 +551,36 @@ footer {
   }
 }
 
+@media (max-width: 1199px){
+  #main.parallax.screen .parallax-element.where-to-buy {
+        width: 400px;
+        height: 300px;
+        font-size: 16px;
+        ol li img {
+              height: 56px;
+            }
+
+
+      }
+  #service_centers{
+    font-size: 18px;
+  }
+
+
+}
+@media (max-width: 999px) {
+  #main.parallax.screen .parallax-element.where-to-buy {
+    width: 400px;
+    height: 300px;
+    font-size: 16px;
+    ol li img {
+      height: 56px;
+    }
+
+
+  }
+  #service_centers{
+    font-size: 16px;
+  }
+}
 
