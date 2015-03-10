@@ -12,16 +12,39 @@ $(function () {
 
 
     $('ul#menu a, .logo a, .slicknav_nav a, .buy_button, .scrollTo').click(function(){
+        var id = $.attr(this, 'href');
+        var header = 0;
+        if(id == '#slogan' || id == '#service_centers')
+            if($(window).width()<875)
+                header = 44;
+            else
+                header = 88;
         $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top
+            scrollTop: $(id).offset().top - header
         }, 500);
         return false;
     });
 
-    skrollr.init({
+    var skrl_opt = {
         smoothScrolling:false,
         forceHeight: false
-    });
+    };
+
+    var srkrl = skrollr.init(skrl_opt);
+
+    $(window).resize(function(){
+        if(isMobile()){
+            if(srkrl != null){
+                srkrl.destroy();
+                srkrl = null;
+            }
+        } else if(srkrl == null) {
+            srkrl = skrollr.init(skrl_opt);
+        }
+    }).resize();
+
+    if(isMobile())
+        $("body").addClass("mobile");
 
     $('.city li').click(function(){
         setSelectionVoid();
@@ -33,6 +56,11 @@ $(function () {
 
     });
 });
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<875
+}
+
 
 function setSelectionVoid(){
     for(var i=0; i<$('ul.city:visible').children().length; i++) {
