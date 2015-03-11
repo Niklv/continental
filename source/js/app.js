@@ -25,7 +25,7 @@ $(function () {
         return false;
     });
 
-    var skrl_opt = {
+    /*var skrl_opt = {
         smoothScrolling:false,
         forceHeight: false
     };
@@ -41,7 +41,7 @@ $(function () {
         } else if(srkrl == null) {
             srkrl = skrollr.init(skrl_opt);
         }
-    }).resize();
+    }).resize();*/
 
     if(isMobile())
         $("body").addClass("mobile");

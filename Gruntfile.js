@@ -14,8 +14,8 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: [
-                    'source/bower/jquery/dist/jquery.js',
-                    'source/bower/skrollr/dist/skrollr.min.js',
+                    'source/bower/jquery/jquery.js',
+                    /*'source/bower/skrollr/dist/skrollr.min.js',*/
                     'source/bower/slicknav/jquery.slicknav.js',
                     'source/js/app.js'
                 ],
