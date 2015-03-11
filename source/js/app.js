@@ -55,6 +55,24 @@ $(function () {
 
 
     });
+
+    $('.arrow.to_map').click(function(){
+        $('html, body').animate({
+            scrollTop: $("#map").offset().top
+        }, 500);
+    });
+    $('.arrow.to_next').click(function(){
+        var id = '#service_centers', header = 0;
+        if($(window).width()<875)
+            header = 44;
+        else
+            header = 88;
+        if($('#slogan').is(':visible'))
+            id = '#slogan';
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - header
+        }, 500);
+    });
 });
 
 function isMobile() {
