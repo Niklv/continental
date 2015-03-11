@@ -19,26 +19,10 @@ html(lang="en")
                     li: a(href="rules.html")= 'Правила'
                     li: a(href="#contacts")= 'Контакты'
             #main.parallax.screen.screen-1.promo
-                img(src="img/road_sign.png").sign.parallax-element(
-                    data-anchor-target="#main"
-                    data-top="bottom:-15%;"
-                    data-top-bottom="bottom:-115%"
-                )
-                img(src="img/men_and_tire.png").tireman.parallax-element(
-                    data-anchor-target="#main"
-                    data-top="bottom:0%;"
-                    data-top-bottom="bottom:-100%"
-                )
-                img(src="img/arrow.png").arrow.to_next.parallax-element(
-                    data-anchor-target="#main"
-                    data-top="bottom: 2%;"
-                    data-top-bottom="bottom: -98%"
-                )
-                div.where-to-buy.parallax-element.desktop-only(
-                    data-anchor-target="#main"
-                    data-top="top: 20%;"
-                    data-top-bottom="top: 120%"
-                )
+                img(src="img/road_sign.png").sign.parallax-element
+                img(src="img/men_and_tire.png").tireman.parallax-element
+                img(src="img/arrow.png").arrow.to_next.parallax-element
+                div.where-to-buy.parallax-element.desktop-only
                     include view/where_to_buy
             #slogan.parallax.screen.screen-2.slogan.mobile-only
                 include view/where_to_buy
