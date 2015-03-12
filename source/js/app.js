@@ -90,7 +90,7 @@ ymaps.ready(function () {
 
     var myMap = new ymaps.Map('ymap', {
         center: [55.74, 37.58],
-        zoom: 13,
+        zoom: 11,
         controls: []
     });
     cityMap=myMap;
@@ -102,7 +102,7 @@ ymaps.ready(function () {
                 if (59.6023 < cords.latitude && cords.latitude < 60.2025 && 29.6239 < cords.longitude && cords.longitude < 30.6841)setCity(1);
                 if (55.6336 < cords.latitude && cords.latitude < 55.9462 && 48.7812 < cords.longitude && cords.longitude < 49.3566)setCity(2);
 
-                myMap.setCenter([cords.latitude, cords.longitude],13);
+                myMap.setCenter([cords.latitude, cords.longitude],11);
             },
             geolocationFailure
         );
@@ -208,8 +208,8 @@ ymaps.ready(function () {
         ['Автоэксперт', 'Олсуфьевский пер., д.7, с.2  ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.7326,37.5795]],
         ['Автоэксперт', 'ул. Краснодарская, д.72, к.1  ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.6695,37.7798]],
         ['Автоэксперт', 'ул. Куликовская, вл.10, стр.1  ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.5729,37.5642]],
-        ['Автоэксперт', 'ул. Березовая алеея, 2а ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.9994,37.2000]],
-        ['Эксклюзив', 'пр-т Большевиков, д. 42  ', 'Телефон', 'tyres.spb.ru', '', [59.8891,30.4913]],
+        ['Автоэксперт', 'ул. Березовая алеея, 2а ', '+7 (495) 648-60-28', 'autoexpert.ru', 'shinaexpert.ru', [55.8520,37.6094]],
+        ['Эксклюзив', 'пр-т Большевиков, д. 42  ', '+7 (812) 441 21 28', 'tyres.spb.ru', '', [59.8891,30.4913]],
         ['Эксклюзив', 'Сердобольская ул., д. 3  ', '+7 (812) 492 02 13', 'tyres.spb.ru', '', [59.9945,30.3273]],
         ['Эксклюзив', 'ул. Оптиков, д. 15  ', '+7 (812) 320 18 85', 'tyres.spb.ru', '', [59.9982,30.2351]],
         ['Вершина', 'Горьковское ш., 47/1  ', '+7 (843) 290 10 40', 'vershina-kazan.ru', '', [55.8264,49.0253]],
@@ -278,7 +278,7 @@ function setCityContent(cityNum){
     $('ul.city:visible').children()[cityNum].className='selected';
 
     var cords=[[55.7538,37.6201],[59.9391,30.3159],[55.7958,49.1066]];
-    cityMap.setCenter(cords[cityNum],13);
+    cityMap.setCenter(cords[cityNum],11);
 
 
 }

@@ -30,7 +30,7 @@ module.exports = function (grunt) {
         jade: {
             prod: {
                 options: {
-                    pretty: true
+                    pretty: false
                 },
                 files: {
                     'build/index.html': 'source/index.jade',
