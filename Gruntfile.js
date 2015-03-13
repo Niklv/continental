@@ -33,8 +33,8 @@ module.exports = function (grunt) {
                     pretty: false
                 },
                 files: {
-                    'build/index.html': 'source/index.jade',
-                    'build/rules.html': 'source/rules.jade'
+                    'build/index.html': 'source/index.jade'
+                    //'build/rules.html': 'source/rules.jade'
                 }
             }
         },

@@ -261,11 +261,14 @@ header {
         .white-line {
           /*display: inline-block;*/
          /* background-image: url('../img/bg_kremlin.png');*/
-          background-repeat: repeat-x;
+          //background-repeat: repeat-x;
          // .background-size(cover);
+          background-repeat: no-repeat;
           background-attachment: fixed;
-          background-size: auto 100%;
-          background-position: 60% 50%;
+          background-size: 100%;
+          background-position: 60% 65%;
+          background-color: #DBDBDB;
+
 
           width: 100%;
           height: 429px;
@@ -528,7 +531,20 @@ footer {
       padding-top: 100px;
       text-align: center;
       h1{
+        font-weight: bold;
+        font-size: 9pt;
         //margin-top: 40px;
+       /* color: @orange;
+        font-family: "HeliosCond Bold", sans-serif;
+        font-size: 42px;
+        font-weight: bold;
+        text-transform: uppercase;*/
+        color: @white;
+      }
+      h2{
+        color: @white;
+      }
+      h1.h1rules{
         color: @orange;
         font-family: "HeliosCond Bold", sans-serif;
         font-size: 42px;
@@ -536,6 +552,7 @@ footer {
         text-transform: uppercase;
       }
       p{
+        text-align: left;
         color: @white;
         font-family: "HeliosCond",sans-serif;
         font-size:20px;
@@ -652,6 +669,7 @@ footer {
 
 .mobile {
   .parallax.screen {
+
     background-attachment: scroll;
   }
 }
