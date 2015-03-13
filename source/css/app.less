@@ -28,6 +28,7 @@ html, body {
   font-family: 'HeliosCond Light', sans-serif;
   font-weight: 900;
   font-size: 20px;
+  height: 100%;
 }
 
 .orange {
@@ -45,6 +46,7 @@ html, body {
 .page-wrapper {
   position: relative;
   margin: 0  @body_border;
+  height: 100%;
 }
 
 header {
@@ -122,7 +124,7 @@ header {
 
 .parallax.screen {
   width: 100%;
-  height: calc(~"100vh" - @header_height);
+  .calc(height, ~"100% - @{header_height}");
   background-position: center;
   background-repeat: no-repeat;
   .background-size(cover);
@@ -132,7 +134,7 @@ header {
   .box-sizing(border-box);
   position: relative;
   &#main {
-    height: 100vh;
+    height: 100%;
     background-image: url('../img/bg_road.png');
     .parallax-element {
       display: block;
@@ -379,7 +381,7 @@ header {
   }
   &#map{
     position: relative;
-    height:100vh;
+    height:100%;
     #ymap{
       position:absolute;
       width:100%;
@@ -723,7 +725,7 @@ footer {
         font-size: @mobile_menu_font_size;
         font-weight: 100;
         &:hover {
-          .border-radius(none);
+          .border-radius(0);
           background: none;
           color: @orange;
           font-weight: 900;
@@ -798,7 +800,9 @@ footer {
     &#service_centers{
       background-image: url('../img/bg_tire.png');
       font-size: 34px;
-      height: calc(~"100vh" - @mobile_header_height);
+      .calc(height, ~"100% - @{mobile_header_height}");
+      min-height: 500px;
+      //height:100%;
       .arrow{
         right:50%;
         bottom: 10px;
@@ -950,7 +954,7 @@ footer {
     }
     &#map{
       position: relative;
-      height:100vh;
+      height:100%;
       #ymap{
         position:absolute;
         width:100%;
@@ -986,7 +990,9 @@ footer {
 
     }
     &.slogan{
-      height: calc(~"100vh" - @mobile_header_height);
+      .calc(height, ~"100% - @{mobile_header_height}");
+      min-height: 370px;
+      //height:100%;
       background: @black;
       text-align: center;
       font-size: 40px;
