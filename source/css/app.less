@@ -189,19 +189,19 @@ header {
               padding-top:5px;
             }
             &:nth-child(2) .text{
-              padding-top:25px;
+              padding-top:18px;
             }
             .number {
               float:left;
               font-size: 1.7em;
               font-family: 'HeliosCond Bold', sans-serif;
-              padding: 6px 10px 10px 0;
+              padding: 0px 10px 10px 0;
               &:after{
                 content: ".";
               }
             }
             &:first-child .number{
-              padding: 25px 10px 10px 0;
+              padding: 50px 10px 10px 0;
             }
             img {
               float:right;
@@ -261,9 +261,12 @@ header {
         .white-line {
           /*display: inline-block;*/
          /* background-image: url('../img/bg_kremlin.png');*/
-          background-repeat: no-repeat;
-          .background-size(cover);
+          background-repeat: repeat-x;
+         // .background-size(cover);
           background-attachment: fixed;
+          background-size: auto 100%;
+          background-position: 60% 50%;
+
           width: 100%;
           height: 429px;
           position: relative;
@@ -341,7 +344,8 @@ header {
               }
               li.selected{
                 color: @orange;
-                background: url('../img/wheel_selector.png') no-repeat 0px 3px;
+                //background: url('../img/wheel_selector.png') no-repeat 0px 5px;
+                //background-size: auto 29px;
                 padding-left: 50px;
                 margin-left: -40px;
 
@@ -571,17 +575,20 @@ footer {
         margin-top: -63px;
       }
       ol li .number {
-         padding: 9px 10px 10px 0px;
+         padding: 0px 10px 10px 0px;
        }
       ol li:first-child .number {
-        padding: 21px 10px 10px 0px;
+        padding: 39px 10px 10px 0px;
       }
-
+      ol li:nth-child(2) .text{
+        padding-top: 15px;
+      }
 
     }
   }
-  #service_centers{
+  .parallax.screen#service_centers{
     font-size: 18px;
+
   }
 }
 
@@ -599,10 +606,10 @@ footer {
       li {
         font-size: 1em;
         &:nth-child(2) .text {
-          padding-top: 19px;
+          padding-top: 10px;
         }
         &:first-child .number{
-          padding: 17px 10px 10px 0px;
+          padding: 31px 10px 10px 0px;
         }
         img {
           height: 40px;
@@ -626,8 +633,9 @@ footer {
       font-size: 0.9em;
     }
   }
-  #service_centers {
+  .parallax.screen#service_centers {
     font-size: 14px;
+
   }
 }
 
@@ -955,7 +963,7 @@ footer {
       background: @black;
       text-align: center;
       font-size: 40px;
-      @media (max-height: 1200px){
+      @media (max-height: 1210px){
         font-size: 36px;
       }
       @media (max-height: 1100px){
