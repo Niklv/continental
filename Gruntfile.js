@@ -9,6 +9,10 @@ module.exports = function (grunt) {
                 cwd: 'source/font/',
                 src: '**',
                 dest: 'build/font/'
+            },
+            htmlcopy: {
+                src: 'source/rules.html',
+                dest: 'build/rules.html'
             }
         },
         concat: {
