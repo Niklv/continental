@@ -165,7 +165,7 @@ header {
         width: 490px;
         height: 360px;
         top: 20%;
-        right: 4%;
+        right: 10%;
         padding: 1em;
         text-shadow: 0px 3px 10px @transparent_black;
         color: @white;
@@ -264,7 +264,7 @@ header {
           /*display: inline-block;*/
          /* background-image: url('../img/bg_kremlin.png');*/
           //background-repeat: repeat-x;
-         // .background-size(cover);
+          //.background-size(cover);
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-size: 100%;
@@ -498,6 +498,7 @@ footer {
 #kazan.white-line {
   background-image: url('../img/bg_kazan.png');
   display: none;
+  background-position: 60% 100%!important;
   .service-logo img{
     margin-left: -78px;
     margin-top: -34px;
@@ -511,6 +512,7 @@ footer {
 #rules.page-wrapper{
   margin-bottom: 19px;
   background-color: @black;
+  height: auto;
   header{
     display: block;
   }
@@ -620,46 +622,70 @@ footer {
   }
 }
 
+@media (min-width: 1700px){
+  #main.parallax.screen .parallax-element{
+    &.tireman {
+      left: auto;
+      right:45%;
+    }
+    &.sign {
+      left: auto;
+      right:80%;
+    }
+    &.where-to-buy {
+      right: auto;
+      left: 55%;
+    }
+  }
+
+}
+
 .smallest-buy {
   #main.parallax.screen .parallax-element.where-to-buy {
-    width: 285px;
-    height: 222px;
-    font-size: 0.76em;
-    padding: 0.7em;
-    h1 {
-      font-size: 1.2em;
-    }
-    ol {
-      margin: 10px 0 0 0;
-      li {
-        font-size: 1em;
-        &:nth-child(2) .text {
-          padding-top: 10px;
-        }
-        &:first-child .number{
-          padding: 31px 10px 10px 0px;
-        }
-        img {
-          height: 40px;
-          margin-top: -25px;
-        }
-        &:first-child img {
-          margin-top: -44px;
+
+    @media (min-height: 630px) {
+      width: 285px;
+      height: 222px;
+      font-size: 0.76em;
+      padding: 0.7em;
+      h1 {
+        font-size: 1.2em;
+      }
+      ol {
+        margin: 10px 0 0 0;
+        li {
+          font-size: 1em;
+          &:nth-child(2) .text {
+            padding-top: 10px;
+          }
+          &:first-child .number{
+            padding: 31px 10px 10px 0px;
+          }
+          img {
+            height: 40px;
+            margin-top: -25px;
+          }
+          &:first-child img {
+            margin-top: -44px;
+          }
         }
       }
+      .note {
+        font-size: 0.6em;
+        padding-top: 10px;
+      }
+      .buy_button {
+        text-shadow: none;
+        right: 0.7em;
+        bottom: 0.7em;
+        border: 2px solid @orange;
+        padding: 5px 7px;
+        font-size: 0.9em;
+      }
+
     }
-    .note {
-      font-size: 0.6em;
-      padding-top: 10px;
-    }
-    .buy_button {
-      text-shadow: none;
-      right: 0.7em;
-      bottom: 0.7em;
-      border: 2px solid @orange;
-      padding: 5px 7px;
-      font-size: 0.9em;
-    }
+
+
   }
   .parallax.screen#service_centers {
     font-size: 14px;
@@ -866,6 +892,7 @@ footer {
         .cell-wrapper {
           .white-line {
             background-attachment: scroll;
+            .background-size(cover);
             height: 90%;
             text-align: center;
             position: relative;
