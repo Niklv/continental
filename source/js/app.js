@@ -9,7 +9,30 @@ $(function () {
     });
     $('.slicknav_menu').prepend('<div class="logo"><a href="#main"><img src="img/logo.png"/></a></div>');
 
+    $('.buy_button').click(
+        function(){
 
+            for(var i=0;i<3;i++){
+                if($('ul.city:visible').children()[i].className==='selected') cityNum=i;
+            }
+            switch(cityNum){
+                case 0:
+                    window.open('http://www.autoexpert.ru', '_blank');
+                    break;
+                case 1:
+                    window.open('http://www.tyres.spb.ru', '_blank');
+                    break;
+                case 2:
+                    window.open('http://www.vershina-kazan.ru', '_blank');
+                    break;
+                default:
+
+                    break;
+            }
+
+
+        }
+    );
 
     $('ul#menu a, .logo a, .slicknav_nav a, .buy_button, .scrollTo').click(function(){
         var id = $.attr(this, 'href');
