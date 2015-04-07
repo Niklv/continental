@@ -23,10 +23,10 @@ body
                     a(href="#main")
                         img(src="img/logo.png")
                 ul#menu
-                    li: a(href="#main")= 'Главная'
-                    li: a(href="#service_centers")= 'Сервисные центры'
-                    li: a(href="rules.html" target="_blank")= 'Правила'
-                    li: a(href="#contacts")= 'Контакты'
+                    li: a(onclick="ga('send', 'event',  'Главная', 'Меню');" href="#main")= 'Главная'
+                    li: a(onclick="ga('send', 'event',  'Сервисные центры', 'Меню');" href="#service_centers")= 'Сервисные центры'
+                    li: a(onclick="ga('send', 'event',  'Правила', 'Меню');" href="rules.html" target="_blank")= 'Правила'
+                    li: a(onclick="ga('send', 'event',  'Контакты', 'Меню');" href="#contacts")= 'Контакты'
             #main.parallax.screen.screen-1.promo
                 img(src="img/road_sign.png").sign.parallax-element
                 img(src="img/men_and_tire.png").tireman.parallax-element
