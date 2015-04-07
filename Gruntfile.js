@@ -18,10 +18,12 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: [
-                    'source/bower/jquery/jquery.js',
+                    'source/bower/jquery/dist/jquery.js',
                     /*'source/bower/skrollr/dist/skrollr.min.js',*/
                     'source/bower/slicknav/jquery.slicknav.js',
+                    'source/bower/scroll-depth/jquery.scrolldepth.js',
                     'source/js/app.js'
+
                 ],
                 dest: 'build/js/app.js'
             }

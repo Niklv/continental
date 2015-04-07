@@ -1,5 +1,7 @@
 var cityMap;
-
+jQuery(function() {
+    jQuery.scrollDepth();
+});
 $(function () {
 
     $('#menu').slicknav({
@@ -11,7 +13,7 @@ $(function () {
 
     $('.buy_button').click(
         function(){
-
+            cityNum=-1;
             for(var i=0;i<3;i++){
                 if($('ul.city:visible').children()[i].className==='selected') cityNum=i;
             }
@@ -24,6 +26,9 @@ $(function () {
                     break;
                 case 2:
                     window.open('http://www.vershina-kazan.ru', '_blank');
+                    break;
+                case -1:
+                    window.open('http://www.autoexpert.ru', '_blank');
                     break;
                 default:
 

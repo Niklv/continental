@@ -8,13 +8,41 @@ html(lang="en")
         meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport')
         script(src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU" type="text/javascript")
         script.
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-55238150-1', 'auto');
             ga('send', 'pageview');
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-55238150-1']);
+        script.
+            setTimeout(function() {_gaq.push(["_trackEvent","visit","10 sec"])}, 10000);
+            var kavanga={};
+                kavanga.cl=209;
+                kavanga.protocol=('https:' == document.location.protocol ? 'https://' : 'http://');
+                kavanga.domain="l.kavanga.ru";
+                kavanga.s = document.createElement('script'); kavanga.s.type = 'text/javascript'; kavanga.s.async = true;
+                kavanga.rand_version = Math.floor((Math.random()*100)+1);
+                kavanga.s.src = kavanga.protocol + kavanga.domain +'/js/leads_'+kavanga.cl+'.js?v='+kavanga.rand_version;
+                kavanga.s0 = document.getElementsByTagName('script')[0]; kavanga.s0.parentNode.insertBefore(kavanga.s, kavanga.s0);
+                function kCall(){
 
+                switch (getCityNumber()){
+                    case 0:
+                    ga('send', 'event',  'Купить', 'Автоэксперт');
+                    break;
+                    case 1:
+                    ga('send', 'event',  'Купить', 'Эксклюзив');
+                    break;
+                    case 2:
+                    ga('send', 'event',  'Купить', 'Вершина');
+                    break;
+                }
+
+                window._ktIsLead = 1;
+                kavanga.ready();
+                }
 
 body
         .page-wrapper
