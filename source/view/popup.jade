@@ -3,14 +3,36 @@
 .popup
     a(href="#close").popup-close
         img(src="img/black_close.png")
-    h1 Да Нет
-    ul
-        li
-            h2 Вам понравилось наше предложение?
-            input(type="radio" name="firstrb")
-            input(type="radio" name="firstrb")
-        li
-            h2 Планируете ли Вы им воспользоваться?
-            input(type="radio" name="secrb")
-            input(type="radio" name="secrb")
-    button ОК
+    form
+        table
+            tr
+                td
+                td.center
+                    h1 Да
+                td.center
+                    h1 Нет
+            tr
+                td
+                    h2
+                        span.dot
+                        | Вам понравилось наше предложение?
+                td.center
+                    input#radio11(type="radio", name="isgoodtype", value="true", checked="checked")
+                    label(for="radio11")
+                td.center
+                    input#radio12(type="radio", name="isgoodtype", value="false")
+                    label(for="radio12")
+            tr
+                td
+                    h2
+                        span.dot
+                        | Планируете ли Вы им воспользоваться?
+                td.center
+                    input#radio21(type="radio", name="doyouwant", value="true", checked="checked")
+                    label(for="radio21")
+                td.center
+                    input#radio22(type="radio", name="doyouwant", value="false")
+                    label(for="radio22")
+            tr
+                td(colspan=3).center
+                    input(type="submit", value="OK").ok
