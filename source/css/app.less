@@ -5,6 +5,7 @@
 @white: #FFFFFF;
 @orange: #FFAD13;
 @black: #020202;
+@dark_orange: #835819;
 @transparent_black: rgba(0, 0, 0, .75);
 
 @body_border: 19px;
@@ -775,6 +776,107 @@ footer {
     }
   }
 }
+
+
+
+
+
+.city_select_popup{
+  .box-shadow(0px 50px 50px 30px rgba(0,0,0,0.5));
+  position: fixed;
+  z-index:9999;
+  top: 110px;
+  left: 0;
+  right: 0;
+  background: @orange;
+  font-size: 25px;
+  color: @black;
+  height: 60px;
+  .city_wrapper{
+    margin: 0 auto;
+    max-width: 700px;
+    width:100%;
+    .selector{
+      display: none;
+      width: 100%;
+      text-align: center;
+      ul {
+        position:relative;
+        list-style: none;
+        background: @white;
+        margin: 10px auto;
+        padding: 0;
+        width:200px;
+        overflow: hidden;
+        height: 40px;
+        border-radius: 5px;
+        .user-select(none);
+        cursor: pointer;
+        .box-shadow(inset 0px 0px 5px 0px rgba(0,0,0,0.75));
+        &.opened {
+          height: 125px;
+          li:hover {
+            background: #bbbbbb;
+          }
+        }
+        li {
+          .light;
+          padding-top:2px;
+          background: @white;
+          height: 40px;
+          line-height: 40px;
+          font-size: 1em;
+          .right_block{
+            position:absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            .line {
+              position:relative;
+              top: 3px;
+              left: -10px;
+            }
+            .arrow {
+              position:relative;
+              top: -2px;
+              left: -2px;
+            }
+          }
+        }
+      }
+    }
+    .city_name {
+      float:left;
+      width: 70%;
+      h1 {
+        text-align: center;
+        font-size: 1.2em;
+        margin: 16px 0;
+        .bold;
+      }
+    }
+    .actions{
+      float:right;
+      width: 29%;
+      button {
+        background: @dark_orange;
+        border: none;
+        width: 90px;
+        height:40px;
+        margin-top: 10px;
+        margin-right: 5px;
+        color: @white;
+        font-size: 0.8em;
+        &:hover {
+          background: @black;
+        }
+      }
+    }
+  }
+}
+
+
 
 @media (max-width: 1500px){
   #main.parallax.screen .parallax-element{
