@@ -590,7 +590,7 @@ footer {
   width: 540px;
   height: 300px;
   color: black;
-  background-color: @orange;
+  background-color: #ffa409;
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 50%;
@@ -598,7 +598,7 @@ footer {
   left: 50%;
   margin-left: -300px;
   padding: 20px;
-  display: none;
+//  display: none;
   z-index: 10000;
   font-size: 25px;
   .popup-close{
@@ -659,119 +659,6 @@ footer {
       border: none;
       font-size: 0.7em;
       margin-top: 110px;
-    }
-  }
-}
-
-.reasonpopup{
-  .bold;
-  width: 590px;
-  height: 305px;
-  color: black;
-  background-color: @orange;
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 50%;
-  margin-top: -200px;
-  left: 50%;
-  margin-left: -300px;
-  padding: 20px;
-//  display: none;
-  z-index: 10000;
-  font-size: 19px;
-  .popup-close{
-    position:absolute;
-    top:20px;
-    right:20px;
-  }
-  table {
-    width: 540px;
-    margin-top: 30px;
-    td.list{
-      background-image: url('../img/dot.png');
-      background-repeat: repeat-x;
-      background-position: 0% 95%;
-      vertical-align: middle;
-      height: 20px;
-      .orangediv{
-        float:left;
-        width: 30px;
-        height: 20px;
-        position: absolute;
-        margin-top: -20px;
-        margin-left: -30px;
-        background-color: @orange;
-      }
-    }
-    td.longtd{
-      padding-left: 16px;
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    h1 {
-
-      text-transform: uppercase;
-      font-size: 1em;
-      margin:0;
-      padding: 0 5px;
-    }
-    h2 {
-      .bold;
-      float: left;
-      background-color: @orange;
-      padding-right: 5px;
-      font-size: 1.1em;
-      margin: 0px 0px -5px;
-      .dot {
-        width:5px;
-        height: 5px;
-        margin: 0 10px 5px 0;
-        display:inline-block;
-        background: black;
-        .border-radius(10px);
-      }
-
-
-    }
-    h2.long{
-      float:none;
-      display: inline;
-      .dot{
-        margin: 0px 10px 5px -16px;
-      }
-    }
-    input[type="radio"] {
-      display:none;
-      + label {
-        display: inline-block;
-        width:12px;
-        height:12px;
-        margin: 0px 10px -7px;
-        .border-radius(20px);
-        .box-shadow(0 0 0 3px white, 0 0 0 5px black);
-        background: white;
-        cursor: pointer;
-      }
-      &:checked + label {
-        background: black;
-      }
-      + label.last{
-        margin: 0px 10px -17px;
-
-      }
-    }
-    .ok{
-      color: @black;
-      border: 3px solid @black;
-      background-color: @orange;
-      font-family: "HeliosCond Bold",sans-serif;
-      width: 100px;
-      height: 35px;
-      font-size: 1em;
-      margin-top: 15px;
     }
   }
 }

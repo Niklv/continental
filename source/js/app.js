@@ -2,7 +2,29 @@ var cityMap;
 jQuery(function() {
     jQuery.scrollDepth();
 });
+
 $(function () {
+
+    $('.city_select_popup .yes').click(function(){
+        $('.city_select_popup').hide();
+    });
+    $('.city_select_popup .no').click(function(){
+        $('.city_select_popup .city_name').hide();
+        $('.city_select_popup .actions').hide();
+        $('.city_select_popup .selector').show();
+    });
+    $('.city_select_popup .selector ul').click(function(){
+        $(this).toggleClass('opened');
+        if($(this).hasClass('opened')){
+            $(this).find('li').click(function(){
+                setCity($(this).index());
+                $('.city_select_popup').hide();
+            });
+        } else {
+            $(this).find('li').off("click");
+        }
+
+    });
 
     $('#menu').slicknav({
         label: '',
@@ -101,6 +123,7 @@ $(function () {
             scrollTop: $(id).offset().top - header
         }, 500);
     });
+
 });
 
 function isMobile() {
@@ -282,6 +305,18 @@ function geolocationFailure(positionError) {
 function setCity(cityNum){
     $('ul.city:visible').children()[cityNum].click();
     //Москва 0 Питер 1 Казань 2
+    var city_name = $('.city_select_popup .city_name span');
+    switch(cityNum){
+        case 0:
+            city_name.text('Москва');
+            break;
+        case 1:
+            city_name.text('Санкт-Петербург');
+            break;
+        case 2:
+            city_name.text('Казань');
+            break;
+    }
 }
 
 function setCityContent(cityNum){
