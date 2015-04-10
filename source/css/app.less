@@ -588,8 +588,8 @@ footer {
 ////////popup
 .popup{
   .bold;
-  width: 540px;
-  height: 300px;
+  width: 600px;
+  height: 220px;
   color: black;
   background-color: @orange;
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
@@ -606,6 +606,22 @@ footer {
     position:absolute;
     top:20px;
     right:20px;
+  }
+  .reason{
+    .light;
+    font-size: 0.7em;
+    width: 640px;
+    margin-left: -21px;
+    margin-top: 34px;
+    height: 62px;
+    background: @transparent_black;
+    border: 0;
+    text-transform: uppercase;
+    color: @dark_orange;
+    &:hover{
+      background: @black;
+      color:@orange;
+    }
   }
   table {
     width: 540px;
@@ -624,8 +640,7 @@ footer {
       padding: 0 5px;
     }
     h2 {
-      .light;
-      font-size: 1.1em;
+      font-size: 1em;
       margin:0;
       .dot {
         width:10px;
@@ -653,13 +668,19 @@ footer {
       }
     }
     .ok{
-      background: black;
-      color: @orange;
+      color: @black;
+      border: 4px solid @black;
+      background-color: @orange;
+      font-family: "HeliosCond Bold",sans-serif;
       width: 100px;
       height: 35px;
-      border: none;
-      font-size: 0.7em;
-      margin-top: 110px;
+      font-size: 0.8em;
+      margin-top: 20px;
+      &:hover{
+        transition: all 0.8s ease 0s;
+        color: @orange;
+        background-color: @black;
+      }
     }
   }
 }
@@ -773,6 +794,11 @@ footer {
       height: 35px;
       font-size: 1em;
       margin-top: 15px;
+      &:hover{
+        transition: all 0.8s ease 0s;
+        color: @orange;
+        background-color: @black;
+      }
     }
   }
 }

@@ -352,3 +352,37 @@ function getCityNumber(){
             return i;
 
 }
+(function() {
+
+    var current_scroll = 0;
+    var last_mouse_y = null;
+
+    $(document)
+        .scroll(function() {
+            current_scroll = $(this).scrollTop();
+        })
+        .mousemove(function(e) {
+            var speed = last_mouse_y - e.pageY;
+            var success_val = e.pageY - speed;
+
+            if (success_val < last_mouse_y && success_val <= current_scroll) {
+                $('.popup').show();
+            }
+
+            last_mouse_y = e.pageY;
+        });
+
+})();
+
+$('.popup .popup-close').click(function(){$('.popup').hide()});
+$('.popup .popup-close').click(function(){$('.popup').hide()});
+$('.reasonpopup .popup-close').click(function(){$('.reasonpopup').hide()});
+$('.reason').click(function(){
+    $('.popup').hide();
+    $('.reasonpopup').show()
+});
+$('.center label').click(function(){
+    ga('send', 'event', 'Popup', $(this).attr('for'));
+});
+$('.popup .ok').click(function(){$('.popup').hide()});
+$('.reasonpopup .ok').click(function(){$('.reasonpopup').hide()});
